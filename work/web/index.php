@@ -1,23 +1,17 @@
 <?php
 
-function h($str)
-{
-  return htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-}
+require('../app/functions.php');
 
-$name = 'Taro  <script>alert(1);</script>';
+include('../app/_parts/_header.php');
 
 ?>
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>PHP Practice</title>
-</head>
-<body>
-  
-  <p>Hello <?= $name; ?> </p>
- 
-</body>
-</html>
+<form action="result.php" method="get">
+  <input type="text" name="message">
+  <input type="text" name="username">
+  <button>Send</button>
+</form>
+
+<?php
+
+include('../app/_parts/_footer.php');
