@@ -2,14 +2,14 @@
 
 require('../app/functions.php');
 
-$message = filter_input(INPUT_GET, 'message');
-$username = filter_input(INPUT_GET, 'username');
+$colorFroGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
+setcookie('color', $colorFroGet);
 
 include('../app/_parts/_header.php');
 
 ?>
 
-<p><?= h($message); ?> by <?= h($username); ?> </p>
+<p><?= h($colorFroGet); ?></p>
 <p><a href="index.php">Go back</a></p>
 
 <?php
